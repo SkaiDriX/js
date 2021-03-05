@@ -1,110 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>TD2</title>
-  <link rel="stylesheet" href="css/cart.css">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet"   href="css/photobox.css">
+
+    <title>photobox</title>
 </head>
 <body>
-	<main>
-		<section id="products-wrapper">
-			<span class="mdi mdi-magnify">
-				<input type="text" id="product-search" placeholder="Rechercher un produit" />
-			</span>
-			<div id="product-list">
-				<div class="product">
-					<div class="photo">
-						<span class="mdi mdi-camera"></span>
-						<a class="product-add2cart">
-							<span class="mdi mdi-cart"></span>
-						</a>
-					</div>
-					<div class="details">
-						<div class="details-top">
-							<strong class="bigger" data-type="ref">#REF1</strong>
-							<strong class="bigger" data-type="price">250,29 €</strong>
-						</div>
-						<div class="details-description">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</div>
-					</div>
-				</div>
-				<div class="product">
-					<div class="photo">
-						<span class="mdi mdi-camera"></span>
-						<a class="product-add2cart">
-							<span class="mdi mdi-cart"></span>
-						</a>
-					</div>
-					<div class="details">
-						<div class="details-top">
-							<strong class="bigger" data-type="ref">#REF2</strong>
-							<strong class="bigger" data-type="price">129,25 €</strong>
-						</div>
-						<div class="details-description">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</div>
-					</div>
-				</div>
-				<div class="product">
-					<div class="photo">
-						<span class="mdi mdi-camera"></span>
-						<a class="product-add2cart">
-							<span class="mdi mdi-cart"></span>
-						</a>
-					</div>
-					<div class="details">
-						<div class="details-top">
-							<strong class="bigger" data-type="ref">#REF3</strong>
-							<strong class="bigger" data-type="price">18,10 €</strong>
-						</div>
-						<div class="details-description">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</div>
-					</div>
-				</div>
-				<div class="product">
-					<div class="photo">
-						<span class="mdi mdi-camera"></span>
-						<a class="product-add2cart">
-							<span class="mdi mdi-cart"></span>
-						</a>
-					</div>
-					<div class="details">
-						<div class="details-top">
-							<strong class="bigger" data-type="ref">#REF4</strong>
-							<strong class="bigger" data-type="price">180,12 €</strong>
-						</div>
-						<div class="details-description">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="cart-wrapper">
-			<div id="cart-header">
-				<h2>Mon panier (<span id="total-products">3</span>)</h2>
-				<a id="empty-cart">Vider le panier</a>
-			</div>
-				<table id="cart-content">
-					<tr>
-						<td data-type="ref">#REF2</td>
-						<td data-type="qte">x2</td>
-						<td data-type="amount">258,50€</td>
-					</tr>
-					<tr>
-						<td data-type="ref">#REF4</td>
-						<td data-type="qte">x1</td>
-						<td data-type="amount">180,12€</td>
-					</tr>
-				</table>
-			<div id="cart-footer">
-				<strong class="bigger">Total :&nbsp;</strong>
-				<span  class="bigger" id="cart-total">438,62€</span>
-			</div>
-		</section>
-	</main>
-	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<nav>
+    <button id="load_gallery">load</button>
+    <button id="previous">prev page</button>
+    <button id="next">next page</button>
+</nav>
+
+
+<main id="gallery">
+
+     <div class="gallery-container" id="gallery_container">
+
+       <div class="vignette" >
+         <img data-uri="/www/canals5/photobox/photos/100"
+           src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/small/img_586d38dc3123d.jpg">
+       </div>
+
+       <div class="vignette" >
+         <img data-uri="/www/canals5/photobox/photos/101"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/small/img_586d38dbc84ac.jpg">
+       </div>
+
+       <div class="vignette">
+         <img  data-uri="/www/canals5/photobox/photos/102"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/small/img_586d38db67677.jpg">
+       </div>
+
+       <div class="vignette">
+         <img  data-uri="/www/canals5/photobox/photos/103"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/small/img_586d38db0444d.jpg">
+       </div>
+
+       <div class="vignette">
+         <img  data-uri="/www/canals5/photobox/photos/104"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/small/img_586d38daa09e8.jpg">
+       </div>
+
+       <div class="vignette" >
+         <img data-uri="/www/canals5/photobox/photos/100"
+           src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/small/img_586d38dc3123d.jpg">
+       </div>
+
+       <div class="vignette" >
+         <img data-uri="/www/canals5/photobox/photos/101"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/small/img_586d38dbc84ac.jpg">
+       </div>
+
+       <div class="vignette">
+         <img data-uri="/www/canals5/photobox/photos/102"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/small/img_586d38db67677.jpg">
+       </div>
+
+       <div class="vignette">
+         <img data-uri="/www/canals5/photobox/photos/103"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/small/img_586d38db0444d.jpg">
+       </div>
+
+       <div class="vignette">
+         <img data-uri="/www/canals5/photobox/photos/104"
+              src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/small/img_586d38daa09e8.jpg">
+       </div>
+
+     </div>
+
+
+    <!-- lightbox container should come here -->
+
+
+  <div class="lightbox_container lightbox_container--visible" id="lightbox_container">
+
+       <div id="lightbox">
+           <div id="lightbox-head">
+               <p id="lightbox_close">-X-</p>
+               <h1 id="lightbox_title">titre photo</h1>
+           </div>
+
+           <div id="lightbox-img">
+               <img id="lightbox_full_img" src="https://webetu.iutnc.univ-lorraine.fr/www/canals5/photobox/img/large/img_586d38daa09e8.jpg">
+           </div>
+       </div>
+
+  </div>
+
+
+</main>
+
+<script type="module" src="photobox.js"></script>
+
 </body>
 </html>

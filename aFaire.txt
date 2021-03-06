@@ -1,0 +1,3 @@
+-> Demander au prof si on règle l'effet de bord (si on va à la dernière page, toute les pages n'en affiche plus que 3 maintenant)
+-> ◦ compléter le code css pour améliorer l'affichage du titre et du bouton pour quitter la lightbox (X),
+-> Gérer les erreurs quand on clique sur les boutons sans qu'on ai chargé de galerie

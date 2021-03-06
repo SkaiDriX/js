@@ -1,5 +1,3 @@
-import {config} from "./config.js";
-
 /**
 * Erreur lors d'un fetch vers l'API
 */
@@ -16,25 +14,14 @@ const conversionJson = (reponse) => {
 }
 
 /**
-* Méthode pour récupérer les informations d'une image en particulier dans l'API
-* id : numéro de l'image à récupérer
-*/
-const loadPicture = (id) => {
-	return fetch(config.root + config.photos + "/" + id, {
-		credentials: 'include'
-	}).then(conversionJson).catch(fetchError);
-}
-
-/**
 * Méthode pour récupérer les informations sur la galerie
 */
-const loadRessource = () => {
-	return fetch(config.root + config.photos, {
+const loadRessource = (uri) => {
+	return fetch(uri, {
 		credentials: 'include'
 	}).then(conversionJson).catch(fetchError);	
 }
 
 export default {
-	loadPicture,
 	loadRessource
 }

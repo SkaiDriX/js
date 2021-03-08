@@ -23,7 +23,7 @@ const loadPage = (uri) => {
 * On récupère la galerie de la page suivante
 */
 const next = () => {
-	return loadPage(gallery.links.next.href);
+	return (gallery == null) ? null : loadPage(gallery.links.next.href);
 }
 
 /**

@@ -8,11 +8,18 @@
 <body>
 
 <nav>
-    <button id="load_gallery">load</button>
-    <button id="previous">prev page</button>
-	<button id="first">first</button>
-	<button id="last">last</button>
-    <button id="next">next page</button>
+	<div>
+    	<button id="previous">Page précédente</button>
+		<button id="first">Début</button>		
+	</div>
+	<div>
+    	<button id="load_gallery">Charger</button>
+	</div>
+	<div>
+		<button id="last">Fin</button>
+    	<button id="next">Page suivante</button>		
+	</div>
+
 </nav>
 
 
@@ -26,11 +33,29 @@
 	<div class="lightbox_container lightbox_container--hidden" id="lightbox_container">
 		<div id="lightbox">
 			<div id="lightbox-head">
-				<p id="lightbox_close">-X-</p>
-				<h1 id="lightbox_title"></h1>
+				<p id="lightbox_close">-Fermer-</p>
+				<h2 id="lightbox_title"></h2>
 			</div>
 			<div id="lightbox-img">
 				<img id="lightbox_full_img" src="">
+			</div>
+			<div id="lightbox-info">
+				<div id="lightbox-details">
+					<div id="description">
+						<label>Description : </label><text id="desc"></text>	
+					</div>
+					<div id="sub-detail">
+						<div>
+							<label>Dimension : </label><text id="taille"></text>
+						</div>
+						<div>
+							<label>Type : </label><text id="type"></text>
+						</div>
+						<div>
+							<label>Taille : </label><text id="octet"></text> octets
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

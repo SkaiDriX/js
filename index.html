@@ -1,69 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet"   href="css/photobox.css">
+    <link rel="stylesheet" href="css/photobox.css">
     <title>photobox</title>
 </head>
+
 <body>
 
-<nav>
-	<div>
-    	<button id="previous">Page précédente</button>
-		<button id="first">Début</button>		
-	</div>
-	<div>
-    	<button id="load_gallery">Charger</button>
-	</div>
-	<div>
-		<button id="last">Fin</button>
-    	<button id="next">Page suivante</button>		
-	</div>
+    <nav>
+        <div>
+            <button id="previous">Page précédente</button>
+            <button id="first">Début</button>
+        </div>
+        <div>
+            <button id="load_gallery">Charger</button>
+        </div>
+        <div>
+            <button id="last">Fin</button>
+            <button id="next">Page suivante</button>
+        </div>
 
-</nav>
-
-
-<main id="gallery">
-
-	<!-- La galerie -->
-    <div class="gallery-container" id="gallery_container"></div>
+    </nav>
 
 
-    <!-- La lightbox -->
-	<div class="lightbox_container lightbox_container--hidden" id="lightbox_container">
-		<div id="lightbox">
-			<div id="lightbox-head">
-				<p id="lightbox_close">-Fermer-</p>
-				<h2 id="lightbox_title"></h2>
-			</div>
-			<div id="lightbox-img">
-				<img id="lightbox_full_img" src="">
-			</div>
-			<div id="lightbox-info">
-				<div id="lightbox-details">
-					<div id="description">
-						<label>Description : </label><text id="desc"></text>	
-					</div>
-					<div id="sub-detail">
-						<div>
-							<label>Dimension : </label><text id="taille"></text>
-						</div>
-						<div>
-							<label>Type : </label><text id="type"></text>
-						</div>
-						<div>
-							<label>Taille : </label><text id="octet"></text> octets
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <main id="gallery">
+
+        <!-- La galerie -->
+        <div class="gallery-container" id="gallery_container"></div>
 
 
-</main>
+        <!-- La lightbox -->
+        <div class="lightbox_container lightbox_container--hidden" id="lightbox_container">
+            <div id="lightbox">
+                <div id="lightbox-head">
+                    <p id="lightbox_close">-Fermer-</p>
+                    <h2 id="lightbox_title"></h2>
+                </div>
+                <div id="lightbox-move">
+                    <button id="lightbox_previous">Prev</button>
+                    <button id="lightbox_next">Next</button>
+                </div>
+                <div id="lightbox-img">
+                    <img id="lightbox_full_img" src="">
+                </div>
 
-<script type="module" src="photobox.js"></script>
+                <div id="lightbox-info">
+                    <div id="lightbox-details">
+                        <div id="description">
+                            <label>Description : </label><text id="desc"></text>
+                        </div>
+                        <div id="sub-detail">
+                            <div>
+                                <label>Dimension : </label><text id="taille"></text>
+                            </div>
+                            <div>
+                                <label>Type : </label><text id="type"></text>
+                            </div>
+                            <div>
+                                <label>Taille : </label><text id="octet"></text> octets
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <script type="module" src="photobox.js"></script>
 
 </body>
+
 </html>

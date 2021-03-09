@@ -1,56 +1,60 @@
 import loader from './photoloader.js';
-import {config} from "./config.js";
+import { config } from "./config.js";
 
 var gallery = null;
 
 /**
-* Récupération de la galerie
-*/
+ * Récupération de la galerie
+ */
 const load = () => {
-	return loadPage(config.photos);
+    return loadPage(config.photos);
 }
 
 /**
-* Permet de charger une page en particulier
-*/
+ * Permet de charger une page en particulier
+ */
 const loadPage = (uri) => {
-	let data = loader.loadRessource(config.root + uri);
-	data.then(info_galerie => { gallery = info_galerie; });
-	return data;
+    let data = loader.loadRessource(config.root + uri);
+    data.then(info_galerie => { gallery = info_galerie; });
+    return data;
 }
 
 /**
-* On récupère la galerie de la page suivante
-*/
+ * On récupère la galerie de la page suivante
+ */
 const next = () => {
-	return (gallery == null) ? null : loadPage(gallery.links.next.href);
+    return (gallery == null) ? null : loadPage(gallery.links.next.href);
 }
 
 /**
-* On récupère la galerie de la page précédente
-*/
+ * On récupère la galerie de la page précédente
+ */
 const prev = () => {
-	return loadPage(gallery.links.prev.href);
+    return loadPage(gallery.links.prev.href);
 }
 
 /**
-* On récupère la galerie de la dernière page
-*/
+ * On récupère la galerie de la dernière page
+ */
 const last = () => {
-	return loadPage(gallery.links.last.href);
+    return loadPage(gallery.links.last.href);
 }
 
 /**
-* On récupère la galerie de la première page
-*/
+ * On récupère la galerie de la première page
+ */
 const first = () => {
-	return loadPage(gallery.links.first.href);
+    return loadPage(gallery.links.first.href);
 }
 
+const getGallery = () => {
+    return document.getElementById("gallery_container");
+}
 export default {
-	load,
-	prev,
-	next,
-	last,
-	first
+    load,
+    prev,
+    next,
+    last,
+    first,
+    getGallery
 }

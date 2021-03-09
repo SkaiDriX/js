@@ -9,6 +9,7 @@ const display_lightbox = (data) => {
     document.querySelector('#taille').innerHTML = data.photo.width + "x" + data.photo.height;
     document.querySelector('#type').innerHTML = data.photo.type;
     document.querySelector('#octet').innerHTML = data.photo.size;
+	
     document.querySelector('#lightbox_previous').addEventListener('click', lightbox.prev);
     document.querySelector('#lightbox_next').addEventListener('click', lightbox.next);
     show();

@@ -16,31 +16,32 @@ const load = (node) => {
 /**
  * On récupère la vignette précédente
  */
-const prev = () => {
+async function prev () {
     if (vignette.previousElementSibling === null) {
-        let p = gallery.prev()
-        p.then(gallery_ui.displayGallery)
-        p.then(info => loader.loadRessource(config.root + info.photos[info.size - 1].links.self.href).then(lightbox_ui.display_lightbox))
-        p.then(vignette = document.getElementById("gallery_container").lastChild.firstElementChild)
+        let p = await gallery.prev(); // Changement de galerie
+		
+		gallery_ui.displayGallery(p);
+		vignette = document.getElementById("gallery_container").lastElementChild;
 
-        console.log(vignette)
-        console.log(vignette.parentNode)
+		return load(vignette.firstElementChild).then(lightbox_ui.display_lightbox);
     } else {
-        return load(vignette.previousElementSibling.firstElementChild).then(lightbox_ui.display_lightbox)
+        return load(vignette.previousElementSibling.firstElementChild).then(lightbox_ui.display_lightbox);
     }
 }
 
 /**
  * On récupère la vignette suivante
  */
-const next = () => {
+async function next () {
     if (vignette.nextElementSibling === null) {
-        let p = gallery.next()
-        p.then(gallery_ui.displayGallery)
-        p.then(info => loader.loadRessource(config.root + info.photos[0].links.self.href).then(lightbox_ui.display_lightbox))
-        p.then(console.log(document.getElementById("gallery_container").lastChild.firstElementChild))
+        let p = await gallery.next(); // Changement de galerie
+		gallery_ui.displayGallery(p);
+		
+		vignette = document.getElementById("gallery_container").firstElementChild;
+
+		return load(vignette.firstElementChild).then(lightbox_ui.display_lightbox);
     } else {
-        return load(vignette.nextElementSibling.firstElementChild).then(lightbox_ui.display_lightbox)
+        return load(vignette.nextElementSibling.firstElementChild).then(lightbox_ui.display_lightbox);
     }
 }
 

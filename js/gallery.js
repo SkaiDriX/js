@@ -48,7 +48,7 @@ const first = () => {
 }
 
 const getGallery = () => {
-    return document.getElementById("gallery_container");
+    return gallery;
 }
 export default {
     load,

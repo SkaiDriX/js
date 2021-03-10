@@ -270,11 +270,13 @@ button:hover {
     float: right;
 }
 
-#lightbox-details {
+#lightbox-details,
+#lightbox-comments {
     background-color: #0f0d0c;
     border: 2px white solid;
     border-radius: 5px;
     padding: 1em;
+    margin-bottom: 1em;
 }
 
 #sub-detail {
@@ -295,4 +297,21 @@ button:hover {
 
 #sub-detail div {
     text-align: center;
+}
+
+#lightbox-comments label {
+    font-weight: bold;
+}
+
+#title {
+    margin-bottom: 1em;
+}
+
+.content {
+    margin-top: 1em;
+}
+
+.comment {
+    border-bottom: 2px white solid;
+    padding: 1em;
 }

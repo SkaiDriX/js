@@ -65,14 +65,39 @@
                     </div>
                 </div>
 
+                <div id="lightbox-add-comment">
+                    <div class="title">
+                        <label>Ajout de commentaires : </label><span id="add-com"></span>
+                    </div>
+                    <div id="add-comment">
+                        <div id="com-title-pseudo">
+                            <div id="com-input-title">
+                                <label id="com-title">Titre : </label>
+                                <input type="text" id="comment-title" name="comment-title" required size="55">
+                            </div>
+                            <div id="com-input-pseudo">
+                                <label id="com-pseudo">Pseudo : </label>
+                                <input type="text" id="comment-pseudo" name="comment-title" required size="55">
+                            </div>
+                        </div>
+                        <div>
+                            <textarea id="comment-content" name="comment-content" placeholder="Commentaire" required cols="70" rows="5"></textarea>
+                        </div>
+                        <div id="comment-add">
+                            <button id="comment-add-button">Ajouter</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div id="lightbox-comments">
-                    <div id="title">
+                    <div class="title">
                         <label>Commentaires : </label><span id="com"></span>
                     </div>
                     <div id="comments">
                     </div>
                 </div>
             </div>
+        </div>
 
 
     </main>

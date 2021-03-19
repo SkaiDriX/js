@@ -320,6 +320,7 @@ button:hover {
 
 #comment-content {
     margin-left: 2%;
+    width: 100%;
     resize: none;
 }
 
@@ -329,24 +330,26 @@ button:hover {
     justify-content: flex-start;
 }
 
-#com-title-title {
+#com-title-pseudo {
+    width: 40%;
+}
+
+#com-input-pseudo {
     float: right;
 }
 
 #com-input-title {
+    float: right;
     margin-top: 3%;
     margin-bottom: 3%;
 }
 
 #comment-add {
-    margin-left: 2%;
+    margin-left: 4%;
     margin-top: 2%;
 }
 
+#comment-pseudo,
 #comment-title {
-    width: 70%;
-}
-
-#comment-pseudo {
     width: 65%;
 }

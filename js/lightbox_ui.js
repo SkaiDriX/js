@@ -1,5 +1,7 @@
 import { config } from "./config.js";
 
+let isActive = false;
+
 const display_lightbox = (content) => {
     // Ajout des informations sur la photo
     document.querySelector('#lightbox_title').innerHTML = content.data.photo.titre;
@@ -15,10 +17,8 @@ const display_lightbox = (content) => {
     // Ajout des commentaires
     content.coms.comments.forEach(element => ajouterCommentaire(element));
 
-    show();        
-    
-    // Full Screen
-    document.documentElement.requestFullscreen();
+    if(!isActive)
+        show();        
 }
 
 const ajouterCommentaire = (element) => {
@@ -39,13 +39,20 @@ const ajouterCommentaire = (element) => {
 const show = () => {
     let lightbox = document.querySelector('#lightbox_container');
     lightbox.classList.add('lightbox_container--visible');
-    lightbox.classList.remove('lightbox_container--hidden');
+    lightbox.classList.remove('lightbox_container--hidden');   
+    
+    // Full Screen
+    document.documentElement.requestFullscreen();
+
+    isActive = true;
 }
 
 const hide = () => {
     let lightbox = document.querySelector('#lightbox_container');
     lightbox.classList.remove('lightbox_container--visible');
     lightbox.classList.add('lightbox_container--hidden');
+
+    isActive = false;
 }
 
 export default {

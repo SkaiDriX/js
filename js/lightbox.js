@@ -22,7 +22,13 @@ async function load(node) {
  */
 async function prev() {
     if (vignette.previousElementSibling === null) {
-        await gallery.prev().then(gallery_ui.displayGallery); // Changement de galerie
+        // Changement de galerie 
+        if(gallery.isFirstPage()) {
+            await gallery.last().then(gallery_ui.displayGallery); 
+        } else {
+            await gallery.prev().then(gallery_ui.displayGallery); 
+        }
+
         vignette = document.getElementById("gallery_container").lastElementChild;
         load(vignette.firstElementChild).then(lightbox_ui.display_lightbox);            
     } else {
@@ -35,7 +41,13 @@ async function prev() {
  */
 async function next() {
     if (vignette.nextElementSibling === null) {
-        await gallery.next().then(gallery_ui.displayGallery); // Changement de galerie
+        // Changement de galerie
+        if(gallery.isLastPage()) {
+            await gallery.first().then(gallery_ui.displayGallery); 
+        } else {
+            await gallery.next().then(gallery_ui.displayGallery);
+        }
+
         vignette = document.getElementById("gallery_container").firstElementChild;
         load(vignette.firstElementChild).then(lightbox_ui.display_lightbox);            
     } else {

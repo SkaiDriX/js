@@ -2,6 +2,9 @@ import loader from './photoloader.js';
 import { config } from "./config.js";
 
 var gallery = null;
+var lastPage = null;
+var firstPage = null;
+var currentPage = null;
 
 /**
  * Récupération de la galerie
@@ -15,7 +18,12 @@ const load = () => {
  */
 const loadPage = (uri) => {
     let data = loader.loadRessource(config.root + uri);
-    data.then(info_galerie => { gallery = info_galerie; });
+    data.then(info_galerie => { 
+        gallery = info_galerie;  
+        lastPage = gallery.links.last.href;
+        firstPage = gallery.links.first.href;
+        currentPage = uri;
+    });
     return data;
 }
 
@@ -54,11 +62,27 @@ const getGallery = () => {
     return gallery;
 }
 
+/**
+ * Permet de savoir si nous sommes à la dernière page
+ */
+const isLastPage = () => {
+    return (currentPage == lastPage);
+}
+
+/**
+ * Permet de savoir si nous sommes à la première page
+ */
+const isFirstPage = () => {
+    return ((currentPage == firstPage) || (currentPage == config.photos));
+}
+
 export default {
     load,
     prev,
     next,
     last,
     first,
-    getGallery
+    getGallery,
+    isLastPage,
+    isFirstPage
 }

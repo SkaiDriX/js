@@ -47,9 +47,13 @@ const first = () => {
     return loadPage(gallery.links.first.href);
 }
 
+/**
+ * Pour pouvoir récupérer la galerie actuelle
+ */
 const getGallery = () => {
     return gallery;
 }
+
 export default {
     load,
     prev,

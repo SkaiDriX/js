@@ -1,6 +1,4 @@
 import { config } from "./config.js";
-import lightbox from "./lightbox.js"
-
 
 const display_lightbox = (content) => {
     // Ajout des informations sur la photo
@@ -11,22 +9,31 @@ const display_lightbox = (content) => {
     document.querySelector('#type').innerHTML = content.data.photo.type;
     document.querySelector('#octet').innerHTML = content.data.photo.size;
 
-    // Ajout des commentaires
-    document.querySelector("#comments").innerHTML =
-        content.coms.comments.reduce((list, com) =>
-            list + `
-        <div class="comment">
-        <div class="comment-details">
-        <div><label>Titre : </label><span class="titre">${com.titre}</span></div>
-        <div><label>Pseudo : </label><span class="pseudo">${com.pseudo}</span></div>
-        <div><label>Date : </label><span class="date">${com.date}</span></div>
-        </div> 
-        <div class="content"><label>Contenu : </label><span>${com.content}</span></div> 
-        </div>`, "");
+    // Vidage de la zone des commentaires
+    document.querySelector("#comments").innerHTML = '';
 
-    document.querySelector('#lightbox_previous').addEventListener('click', lightbox.prev);
-    document.querySelector('#lightbox_next').addEventListener('click', lightbox.next);
-    show();
+    // Ajout des commentaires
+    content.coms.comments.forEach(element => ajouterCommentaire(element));
+
+    show();        
+    
+    // Full Screen
+    document.documentElement.requestFullscreen();
+}
+
+const ajouterCommentaire = (element) => {
+    let div = document.createElement('div');
+    div.classList.add("comment");
+    div.innerHTML = `
+        <div class="comment-details">
+        <div><label>Titre : </label><span class="titre">${element.titre}</span></div>
+        <div><label>Pseudo : </label><span class="pseudo">${element.pseudo}</span></div>
+        <div><label>Date : </label><span class="date">${element.date}</span></div>
+        </div> 
+        <div class="content"><label>Contenu : </label><span>${element.content}</span></div> 
+    `;
+
+    document.querySelector("#comments").prepend(div);
 }
 
 const show = () => {
@@ -44,5 +51,6 @@ const hide = () => {
 export default {
     display_lightbox,
     show,
-    hide
+    hide,
+    ajouterCommentaire
 }

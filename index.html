@@ -30,70 +30,83 @@
         <!-- La galerie -->
         <div class="gallery-container" id="gallery_container"></div>
 
-
         <!-- La lightbox -->
         <div class="lightbox_container lightbox_container--hidden" id="lightbox_container">
             <div id="lightbox">
                 <div id="lightbox-head">
                     <p id="lightbox_close">-Fermer-</p>
-                    <h2 id="lightbox_title"></h2>
+                    
                 </div>
-                <div id="lightbox-move">
+                <div id="lightbox-nav">
                     <button id="lightbox_previous">Prev</button>
+                    <h2 id="lightbox_title"></h2>
                     <button id="lightbox_next">Next</button>
                 </div>
                 <div id="lightbox-img">
                     <img id="lightbox_full_img" src="">
                 </div>
 
-                <div id="lightbox-info">
-                    <div id="lightbox-details">
-                        <div id="description">
-                            <label>Description : </label><span id="desc"></span>
-                        </div>
+                <div class="lightbox-sub">
+                    <div class="sub-head">
+                        Informations
+                    </div>
+
+                    <div class="sub-content">
                         <div id="sub-detail">
-                            <div>
-                                <label>Dimension : </label><span id="taille"></span>
+                            <div id="description">
+                                <label>Description :</label>
+                                <span id="desc"></span>
                             </div>
-                            <div>
-                                <label>Type : </label><span id="type"></span>
-                            </div>
-                            <div>
-                                <label>Taille : </label><span id="octet"></span> octets
+                            <div id="details">
+                                <div>
+                                    <label>Dimension :</label>
+                                    <span id="taille"></span>
+                                </div>
+                                <div>
+                                    <label>Type :</label>
+                                    <span id="type"></span>
+                                </div>
+                                <div>
+                                    <label>Taille :</label>
+                                    <span id="octet"></span> octets
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div id="lightbox-add-comment">
-                    <div class="title">
-                        <label>Ajout de commentaires : </label><span id="add-com"></span>
+                <div class="lightbox-sub">
+                    <div class="sub-head">
+                        Ajout de commentaire
                     </div>
-                    <div id="add-comment">
-                        <div id="com-title-pseudo">
-                            <div id="com-input-title">
-                                <label id="com-title">Titre : </label>
-                                <input type="text" id="comment-title" name="comment-title" required size="55">
+                    
+                    <div class="sub-content">
+                        <div id="add-comment">
+                            <div class="message">
+                                <textarea id="comment-content" name="comment-content" placeholder="Commentaire"></textarea>
                             </div>
-                            <div id="com-input-pseudo">
-                                <label id="com-pseudo">Pseudo : </label>
-                                <input type="text" id="comment-pseudo" name="comment-title" required size="55">
-                            </div>
-                        </div>
-                        <div>
-                            <textarea id="comment-content" name="comment-content" placeholder="Commentaire" required cols="70" rows="5"></textarea>
-                        </div>
-                        <div id="comment-add">
-                            <button id="comment-add-button">Ajouter</button>
-                        </div>
+
+                            <div class="element">
+                                <label for="comment-title">Titre</label>
+                                <input type="text" id="comment-title" name="comment-title">
+                            
+                                <label for="comment-pseudo">Pseudo</label>
+                                <input type="text" id="comment-pseudo" name="comment-pseudo">
+                 
+                                <button type="submit" id="comment-add-button">Ajouter</button>
+                             </div>
+
+                        </div>           
                     </div>
                 </div>
 
-                <div id="lightbox-comments">
-                    <div class="title">
-                        <label>Commentaires : </label><span id="com"></span>
+                <div class="lightbox-sub">
+                    <div class="sub-head">
+                        Commentaires
                     </div>
-                    <div id="comments">
+                    
+                    <div class="sub-content">
+                        <div id="comments"></div>
                     </div>
                 </div>
             </div>
